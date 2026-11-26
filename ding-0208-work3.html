@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>若海贝斯社 · 影像与文学讨论夜</title>
+    <style>
+        /* 页面整体：晨光杏色背景，居中布局 */
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+            background-color: #FFECD6;
+            background: linear-gradient(160deg, #FFECD6 0%, #fbe6c8 100%);
+            color: #4a3f33;
+            text-align: center;
+        }
+
+        /* 主内容“卡片”区域（除背景色值外，其余声明不允许修改） */
+        .page {
+            display: inline-block;
+            background-color: #fefaf5;
+            box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+            text-align: left;
+            max-width: 720px;
+        }
+
+        /* ③ 并集选择器：统一各级标题的颜色与字间距 */
+        h1, h2, h3, h4, h5, h6 {
+            color: #4a3527;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 175%;
+            line-height: 1.5;
+        }
+
+        h2 {
+            font-size: 128%;
+            line-height: 1.6;
+        }
+
+        h3 {
+            font-size: 112%;
+            letter-spacing: 1px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        /* ④ ID 选择器：仅作用于 <p id="intro">，放大、加粗、特殊颜色强调 */
+        p#intro {
+            font-size: 140%;
+            font-weight: bold;
+            color: #b5462f;
+        }
+
+        .intro-text {
+            line-height: 1.9;
+            letter-spacing: 0.5px;
+            text-align: left;
+            text-indent: 2em;
+        }
+
+        /* 渐变分隔线（用背景渐变模拟，无 border） */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, rgba(91, 70, 54, 0), rgba(91, 70, 54, 0.45), rgba(91, 70, 54, 0));
+        }
+
+        /* 表格基础样式 */
+        table {
+            width: 100%;
+            background-color: #fdf4e5;
+            font-size: 90%;
+        }
+
+        th {
+            background-color: #6b4f38;
+            color: #fdf6ec;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            line-height: 2.2;
+        }
+
+        td {
+            line-height: 2.1;
+            text-align: center;
+        }
+
+        /* 斑马纹行效果 */
+        table tr:nth-child(even) {
+            background-color: #fbeed9;
+        }
+
+        /* 鼠标移入整行高亮 */
+        table tr:hover {
+            background-color: #f3ddbe;
+        }
+
+        /* ① 后代选择器：仅当 div 里的 table 里出现超级链接时才触发 */
+        div table a {
+            font-weight: bold;
+            font-size: 110%;
+            color: #8b3b30;
+        }
+
+        /* 链接过渡反馈 */
+        a {
+            transition: color 0.2s ease;
+        }
+
+        /* ② 链接伪类 */
+        a:link {
+            color: #b6553b;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #7a7b52;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #e36a4c;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: #3c4f9f;
+            text-decoration: underline;
+        }
+
+        /* ⑤ 带类名的链接 */
+        a.red:link {
+            color: #e25b3d;
+        }
+
+        a.red:active {
+            color: #3046a1;
+        }
+
+        a.blue {
+            color: #4b7f60;
+        }
+
+        a.blue:active {
+            color: #a53aa4;
+        }
+
+        /* ⑥ 伪元素：段落首字符（字号默认，颜色粗细跟随所在元素） */
+        p::first-letter {
+            font-size: 100%;
+        }
+
+        /* 仅第一段首字：红色、大写、加粗、放大 */
+        p.lead::first-letter {
+            font-size: 180%;
+            font-weight: bold;
+            color: #c45b3f;
+            text-transform: uppercase;
+        }
+
+        /* 重要提示段首字：直接继承整段的字号、粗细、颜色，与其他字完全一致 */
+        p#intro::first-letter {
+            font-weight: inherit;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        /* 链接区首字：字号不放大，颜色粗细跟随链接本身，与本行其他字一致 */
+        p.links::first-letter {
+            font-size: 100%;
+        }
+
+        div::first-line {
+            color: #b04832;
+            font-weight: bold;
+        }
+
+        /* 底部公告 */
+        .notice {
+            font-size: 90%;
+            line-height: 1.7;
+            background-color: #fbeed9;
+            text-align: left;
+        }
+
+        /* 内容容器：左右各留约 4% 留白，整体水平居中（不使用 padding/border） */
+        .content {
+            width: 92%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+<div class="content">
+
+    <!-- ① 顶部标题区 -->
+    <div>
+        <h1 class="center">若海贝斯社招新 · 影像与文学讨论夜</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ② 活动介绍区 -->
+    <div>
+        <h2 id="intro" class="center">本周主题：影像与文学讨论夜 · Film &amp; Literature Talk</h2>
+
+        <p class="intro-text lead">
+            本周六晚七点，若海贝斯社将在社团活动室点亮暖黄灯光，邀请新老社员围坐一堂，从一部电影、一本小说出发，聊聊画面里没说出口的情绪，也聊聊文字背后藏着的人生。
+        </p>
+
+        <p class="intro-text">
+            本期我们会一起重温宫崎骏的《千与千寻》，共读圣埃克苏佩里的 The Little Prince，并从《红楼梦》《边城》《骆驼祥子》等国内名著，《简·爱》《傲慢与偏见》《百年孤独》等外国经典，到《霸王别姬》《肖申克的救赎》等经典影片中取材，在光影与书页之间比较两种叙事方式如何讲述成长与孤独。
+        </p>
+
+        <p class="intro-text">
+            现场准备了清茶与小食，欢迎带上你最近正在读的名著或正在看的影片来分享，无论是《巴黎圣母院》里的浪漫与悲悯，还是《平凡的世界》中的奋斗与坚守，都可以成为今晚讨论的话题。
+        </p>
+
+        <p id="intro">
+            本次讨论席位有限，报名成功后以群内通知为准，请务必留下可联系的联系方式。
+        </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ③ 活动报名信息表格区 -->
+    <div>
+        <h3 class="center">活动报名名单</h3>
+
+        <table>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>联系方式</th>
+                <th>讨论主题</th>
+                <th>报名状态</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td><a href="https://example.com/person1">林小满</a></td>
+                <td>138****0001</td>
+                <td>《千与千寻》中的成长意象（电影）</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td><a href="https://example.com/person2">陈屿</a></td>
+                <td>139****0002</td>
+                <td>The Little Prince 的孤独与陪伴（外国小说）</td>
+                <td>已确认席位</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>苏晚</td>
+                <td>137****0003</td>
+                <td>《红楼梦》人物命运与家族兴衰（国内名著）</td>
+                <td>待确认</td>
+            </tr>
+            <tr>
+                <td>04</td>
+                <td><a href="https://example.com/person4">赵之衡</a></td>
+                <td>136****0004</td>
+                <td>《简·爱》中女性的自尊与独立（外国名著）</td>
+                <td>待确认</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>何田田</td>
+                <td>135****0005</td>
+                <td>《边城》里的故乡与人情（国内名著）</td>
+                <td>候补名单</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td><a href="https://example.com/person6">周野</a></td>
+                <td>134****0006</td>
+                <td>《霸王别姬》戏梦人生与时代变迁（电影）</td>
+                <td>候补名单</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ④ 页面链接区 -->
+    <div>
+        <div class="center">
+            <p class="links">
+                <a class="red" href="https://Tina-012.github.io/123/ding-0208-work2.html">查看往期活动照片</a><br>
+                <a class="blue">在线咨询活动详情</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ⑤ 底部公告区 -->
+    <div class="notice">
+        活动地点：学校大学生活动中心三楼 302 若海贝斯社活动室。<br>
+        活动时间：本周六 19:00 - 21:30，请提前十分钟到场签到。<br>
+        温馨提醒：讨论时请尊重不同观点，如需借阅社团藏书请在公告栏登记。
+    </div>
+
+    <br>
+
+</div>
+
+</div>
+
+</body>
+</html>
